@@ -47,7 +47,7 @@ public class AsteroideAddon extends MeteorAddon {
     public void onInitialize() {
         MeteorClient.EVENT_BUS.subscribe(this); // dear fuck chatskibidi...
 
-        LOG.info("\nLoaded Asterid v0.2.2\n");
+        LOG.info("\nLoaded Asterid v0.2.1\n");
 
         // src/main/java/spigey/asteroide/modules/TrollModule.java
         try ( InputStream is = getClass().getClassLoader().getResourceAsStream("trolls.txt");
