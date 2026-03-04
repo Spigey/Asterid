@@ -22,13 +22,10 @@ import meteordevelopment.meteorclient.systems.hud.HudGroup;
 import meteordevelopment.meteorclient.systems.modules.Category;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import org.slf4j.Logger;
-import spigey.asteroide.utils.ws;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
@@ -45,27 +42,12 @@ public class AsteroideAddon extends MeteorAddon {
     public static double[] lastPos = {0, 0, 0};
     public static List<String> trolls = new ArrayList<>();
     public static List<String> notInsults = new ArrayList<>();
-    public static Set<String> users = new HashSet<>();
-    public static ws wss = null;
-
-    public static boolean showRtc = false;
-
-    public static boolean attemptConnect(String uri) {
-        RTCSettingsModule rtc = Modules.get().get(RTCSettingsModule.class);
-        //LOG.info(String.format("%b %b", !rtc.connect.get(), rtc.isActive()));
-        //if(rtc.isActive() && !rtc.connect.get()) return true;
-        try {
-            wss = new ws(new URI(uri + "asws?version=0.2.2"));
-            wss.connect();
-            return true;
-        }catch(Exception e){ LOG.error("Failed to connect to RTC! {}", String.valueOf(e)); return false; }
-    }
 
     @Override
     public void onInitialize() {
         MeteorClient.EVENT_BUS.subscribe(this); // dear fuck chatskibidi...
 
-        LOG.info("\nLoaded Asteroide v0.2.2\n");
+        LOG.info("\nLoaded Asterid v0.2.2\n");
 
         // src/main/java/spigey/asteroide/modules/TrollModule.java
         try ( InputStream is = getClass().getClassLoader().getResourceAsStream("trolls.txt");
@@ -110,11 +92,10 @@ public class AsteroideAddon extends MeteorAddon {
         modules.add(new EncryptChatModule());
         modules.add(new DistributeModule());
         modules.add(new TrollModule());
-        if(mc.getSession().getUsername().equals("Spigey") || mc.getSession().getUsername().startsWith("Player")) modules.add(new DevModule()); // People have said this is malware. It's just debugging for development. It's literally open source.
+        modules.add(new DevModule());
         modules.add(new FastStaircaseModule());
         modules.add(new BlockHitboxesModule());
         modules.add(new ClientDeleteModule());
-        modules.add(new RTCSettingsModule());
         modules.add(new BetterNoInteractModule());
         modules.add(new BetterAntiCrashModule());
         modules.add(new AutoCrashModule());
@@ -149,7 +130,6 @@ public class AsteroideAddon extends MeteorAddon {
         Commands.add(new WhereIsCommand());
         Commands.add(new TrackerCommand());
         Commands.add(new BCommand());
-        Commands.add(new RTCCommand());
         Commands.add(new CloseCommand());
         Commands.add(new UUIDCommand());
         Commands.add(new DupeCommand());
@@ -162,11 +142,7 @@ public class AsteroideAddon extends MeteorAddon {
         hud.register(SpoofedIPHUD.INFO);
         hud.register(MinehutIPHud.INFO);
         hud.register(ImageHUD.INFO);
-
-        showRtc = !(Modules.get().get(RTCSettingsModule.class).isActive() && Modules.get().get(RTCSettingsModule.class).hideMessages.get());
         ChatUtils.registerCustomPrefix("spigey.asteroide.modules", this::getPrefix);
-
-        if(!attemptConnect("wss://rtc.asteroide.fun/")) attemptConnect("ws://rtc.asteroide.cc/");
     }
 
     private Text getPrefix(){ // https://github.com/MeteorClientPlus/MeteorPlus/blob/1.21.8/src/main/java/nekiplay/meteorplus/features/modules/misc/ChatPrefix.java
@@ -196,7 +172,7 @@ public class AsteroideAddon extends MeteorAddon {
     @Override public String getPackage() {
         return "spigey.asteroide";
     }
-    @Override public GithubRepo getRepo() { return new GithubRepo("asteroide-development", "Asteroide"); }
-    @Override public String getWebsite() { return "https://www.asteroide.cc/"; }
-    @Override public String getCommit() { return "d99742cf8cfed610ddb1e5ff5cd9041dca39d973"; } // Crashes when I try to do it dynamically, requires any commit for the website & GitHub to be clickable
+    @Override public GithubRepo getRepo() { return new GithubRepo("Spigey", "Asterid"); }
+    @Override public String getWebsite() { return "https://github.com/Spigey/Asterid"; }
+    @Override public String getCommit() { return "87cd9e5d1af3276c0ab7f62adf6d73ab49d7c42f"; } // Crashes when I try to do it dynamically, requires any commit for the website & GitHub to be clickable
 }

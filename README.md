@@ -1,7 +1,7 @@
 # Asteroide
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/asteroide-development/Asteroide/refs/heads/master/src/main/resources/assets/asteroide/icon.png?fuckass=cache" width="200">
+  <img src="https://raw.githubusercontent.com/Spigey/Asterid/refs/heads/master/src/main/resources/assets/asteroide/icon.png?fuckass=cache" width="200">
 </div>
 <p align="center">
   <strong>The best utility Addon.</strong>
@@ -14,20 +14,17 @@ Asteroide is a powerful Meteor Client addon for 1.20+, aiming to enhance meteor,
 <a href="https://discord.gg/QFHCFynpkY">
   <img alt="Discord" src="https://img.shields.io/discord/1334963147702014043?label=Discord&logo=discord&style=flat-square">
 </a>
-  <a href="https://github.com/asteroide-development/Asteroide/graphs/contributors">
-    <img alt="Contributors" src="https://img.shields.io/github/contributors/asteroide-development/Asteroide?style=flat-square">
+  <a href="https://github.com/Spigey/Asterid/graphs/contributors">
+    <img alt="Contributors" src="https://img.shields.io/github/contributors/Spigey/Asterid?style=flat-square">
   </a>
-  <a href="https://github.com/asteroide-development/Asteroide">
-    <img alt="Code size" src="https://img.shields.io/github/languages/code-size/asteroide-development/Asteroide?style=flat-square">
+  <a href="https://github.com/Spigey/Asterid">
+    <img alt="Code size" src="https://img.shields.io/github/languages/code-size/Spigey/Asterid?style=flat-square">
   </a>
-  <a href="https://github.com/asteroide-development/Asteroide">
-    <img alt="Lines of Code" src="https://img.shields.io/endpoint?style=flat-square&url=https://tokei.kojix2.net/badge/github/asteroide-development/Asteroide/lines">
+  <a href="https://github.com/Spigey/Asterid">
+    <img alt="Lines of Code" src="https://img.shields.io/endpoint?style=flat-square&url=https://tokei.kojix2.net/badge/github/Spigey/Asterid/lines">
   </a>
-  <a href="https://github.com/asteroide-development/Asteroide/releases">
-    <img alt="Downloads" src="https://img.shields.io/github/downloads/asteroide-development/asteroide/total?color=red&style=flat-square">
-  </a>
-  <a href="https://uptime.betterstack.com/?utm_source=status_badge">
-    <img alt="Uptime" src="https://uptime.betterstack.com/status-badges/v2/monitor/26971.svg">
+  <a href="https://github.com/Spigey/Asterid/releases">
+    <img alt="Downloads" src="https://img.shields.io/github/downloads/Spigey/Asterid/total?color=red&style=flat-square">
   </a>
 <br>
   <a href="https://discord.gg/QFzE3UzdpQ">
@@ -111,7 +108,7 @@ Asteroide is a powerful Meteor Client addon for 1.20+, aiming to enhance meteor,
 
 2. **Download the Mod**:
 
-    - Download Asteroide Here: [Releases](https://github.com/asteroide-development/Asteroide/releases)
+    - Download Asteroide Here: [Releases](https://github.com/Spigey/Asterid/releases)
     - Ensure the mod version you download is compatible with your Minecraft and Fabric Loader versions.
     - Save the mod `.jar` file to your computer.
 
